@@ -1,0 +1,90 @@
+/*
+  -------- Header Styles -------
+*/
+
+@import "../utils/breakpoints";
+
+.header{
+  display: flex;
+  align-items: center;
+  background-color: $amazon-blue;
+  border-bottom: 1px solid $border-dark;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+
+  @include media('<=425px'){
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include media(">phone", "<=tablet") {
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  &__logo{
+    flex: 0.2;
+    &-img{
+      width: 120px;
+      margin: 30px;
+    }
+  }
+
+    &__search{
+      flex: 0.6;
+      .MuiIconButton-root{
+        background-color: $link-color !important;
+        border-radius: none !important;
+      }
+      @include media('<=phone'){
+        display: none;
+      }
+
+      @include media('>phone', '<=425px',){
+        display: none;
+      }
+
+    }
+
+    &__icons{
+      flex: 0.2;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      color: $white;
+
+      @include media('<=phone'){
+        display: none;
+      }
+
+      @include media('>phone', '<=425px',){
+        display: none;
+      }
+
+
+      .MuiSvgIcon-root{
+        font-size: 28px;
+      }
+      &-count{
+        color: $link-color;
+
+        span{
+          font-size: 14px;
+          font-weight: 600;
+          color: $white;
+          background: $link-color;
+          padding:  2px 8px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+ 
+}
+
+.MuiPaper-root{
+  border-radius: 50px !important;
+}
